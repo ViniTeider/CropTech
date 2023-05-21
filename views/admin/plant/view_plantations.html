@@ -1,0 +1,53 @@
+{% extends "iot/iot_index.html" %}
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"><a href="/admin/">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/plant/">Plantas</a></li>
+                        <li class="breadcrumb-item active">Lista de Plantação</li>
+                    </ol>
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="view_plantations" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Id Plantação</th>
+                                        <th>Nome</th>
+                                        <th>Cliente</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for plantation in plantations %}
+                                    <tr>
+                                        <td>{{ plantation.id }}</td>
+                                        <td>{{ plantation.plantation_name }}</td>
+                                        <td>{{ plantation.person_name }}</td>
+                                        <td class="text-center"><a href="/admin/plant/update_registered_plantation/id={{ plantation.id }}"><i class="fa-solid fa-pencil"></i></a></td>
+                                        <td class="text-center"><a href="/admin/plant/delete_plantation/id={{ plantation.id }}"><i class="fa-solid fa-trash" style="color: #db1a1a;"></i></a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Id Plantação</th>
+                                        <th>Nome</th>
+                                        <th>Cliente</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

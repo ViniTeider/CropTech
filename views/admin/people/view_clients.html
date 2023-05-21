@@ -1,0 +1,65 @@
+{% extends "iot/iot_index.html" %}
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"><a href="/admin/">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/people/">Pessoas</a></li>
+                        <li class="breadcrumb-item active">Lista de Clientes</li>
+                    </ol>
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="view_clients" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Email</th>
+                                        <th>Senha</th>
+                                        <th>CPF</th>
+                                        <th>Data de Nascimento</th>
+                                        <th>Data de Criação</th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for client in clients %}
+                                    <tr>
+                                        <td>{{ client.id }}</td>
+                                        <td>{{ client.name }}</td>
+                                        <td>{{ client.email }}</td>
+                                        <td>{{ client.senha }}</td>
+                                        <td>{{ client.cpf }}</td>
+                                        <td>{{ client.birth_date }}</td>
+                                        <td>{{ client.created_at }}</td>
+                                        <td class="text-center"><a href="/admin/people/update_registered_client/id={{ client.id }}"><i class="fa-solid fa-pencil"></i></a></td>
+                                        <td class="text-center"><a href="/admin/people/delete_client/id={{ client.id }}"><i class="fa-solid fa-trash" style="color: #db1a1a;"></i></a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Email</th>
+                                        <th>Senha</th>
+                                        <th>CPF</th>
+                                        <th>Data de Nascimento</th>
+                                        <th>Data de Criação</th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

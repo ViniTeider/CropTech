@@ -1,0 +1,44 @@
+{% extends "iot/iot_index.html" %}
+{% import 'utils/forms.html' as forms %}
+
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                <h3 class="mt-4">Atualização de Funcionário</h3>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/people/">Pessoas</a></li>
+                    <li class="breadcrumb-item active">Atualização de Funcionário</li>
+                </ol>
+                <div class="container-fluid px-4">
+                    <div class="row">
+                        <div class="vertical-center">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-header">
+                                    Atualizar Funcionário
+                                    </div>
+                                    <div class="card-body">
+                                        <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/people/update_employee" method="POST">
+                                            {{ forms.input(label = 'ID', name = 'id', id = 'id', type='text', box_size = 1, value = id ) }}
+                                            {{ forms.input(label = 'Nome', name = 'name', id = 'name', type='text', box_size = 6) }}
+                                            {{ forms.input(label = 'CPF', name = 'cpf', id = 'cpf', type='text', box_size = 3) }}
+                                            {{ forms.input(label = 'Email', name = 'email', id = 'email', type='text', box_size = 3) }}
+                                            {{ forms.input(label = 'Senha', name = 'senha', id = 'senha', type='text', box_size = 3) }}
+                                            {{ forms.input(label = 'Data de Nascimento', name = 'birth_date', id = 'birth_date', type='date', box_size = 2) }}
+                                            {{ forms.button(label = 'Atualizar Funcionário', box_size = 12) }}
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

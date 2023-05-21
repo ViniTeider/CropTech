@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>AgroTop</title>
+	<link rel="icon" type="image/x-icon" href="../static/home/images/favicon.png">
+	
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--CSS-->
+	<link rel="stylesheet" href="static/home/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="../static/home/css/main.css">
+	<link rel="stylesheet" href="../static/home/css/header.css">
+	
+	<!--JS-->
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="static/home/js/main.js"></script>
+</head>
+
+<body>
+
+	<!--navbar-->
+	<nav class="navbar navbar-expand-lg bg-light navbar-div">
+		<div class="container-fluid col-12">
+			<div class="float-left">
+				<a class="navbar-brand" href="/" style="color: #2F434A;"> 
+					<i class="d-inline-block align-center fa-solid fa-tractor"></i>
+					AgroTop
+				</a>
+			</div>
+
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item px-2 align-text-center">
+					<a class="nav-item" aria-current="page" href="/">Home</a>
+				</li>
+				<li class="nav-item px-2 align-text-center">
+					<a class="nav-item" aria-current="page" href="#quem-somos">Sobre</a>
+				</li>
+				<li class="nav-item px-2 align-text-center">
+				<a class="nav-item" aria-current="page" href="/">Contato</a>
+				</li>
+			</ul>
+
+			<div class="float-right align-text-center">
+				<a class="nav-item px-2" href="/auth/login">login</a>
+				<a class="nav-item px-2" href="/auth/signup">cadastrar-se</a>
+			</div>
+
+		  </div>
+		</div>
+	</nav>
+
+	
+	<!--tela inicial com a imagem-->
+	<div class="container" style="height: 95vh; width: 100vw">
+		<div class="h-100 d-flex justify-content-center align-items-center" style="color: #E5EDF0">
+			<i class="fa-solid fa-tractor" style="height: 20vh"></i>
+			<p style="font-size: 20vh">AgroTop</p>
+		</div>
+	</div>
+
+	<!--tela sobre quem somos-->
+	<div class="fullscreen">
+
+        <div class="col-sm-12 h-100 d-flex justify-content-center align-items-center" style="width: 90%; margin:auto">
+            <div class="card" style="border: none;">
+                <div class="row card-body">
+                   <div class="col-sm-6">
+						<a id="quem-somos"></a>
+						<h5 class="card-title" style="color: #F0AB1F; font-size: 24px">Quem somos</h5>
+                    	<h3 class="card-title" style="color: #145D4C; font-size: 64px">Revolucionando a agricultura para pequenos produtores</h3>
+                    	<p class="card-text">
+							Com a AgroTop, os pequenos agricultores podem impulsionar sua produtividade, reduzir custos e maximizar seus resultados de forma sustentável. Com suas avançadas tecnologias, os agricultores podem tornar suas plantações mais eficientes e produtivas. Os sistemas embarcados da AgroTop permitem o monitoramento em tempo real das condições do solo, da umidade, da temperatura e de outros fatores essenciais para o cultivo. Além disso, fornecem dados precisos para o controle do uso de recursos, como água e fertilizantes, otimizando o processo de produção.
+					   </p>
+                    </div>
+                	<img class="col-sm-6" style="border-radius: 30px;" src="./../static/home/images/drone.jpg"/>
+                </div>
+        	</div>
+		</div>
+
+	</div>
+
+
+	<!--tela sobre contato-->
+	<div class="fullscreen">
+
+		<div class="container h-100">
+			<div class="row col-sm-12 justify-content-center">
+				<h1 style="font-weight:bold; font-size: 72px; color: #145D4C">Entre em contato conosco</h1>
+			</div>
+
+
+			<div class="row col-sm-12 h-75 d-flex justify-content-center align-items-center" style="margin-top: auto; margin-bottom: auto;">
+
+				<!--ESQUERDA-->
+				<div class="container col-sm-4" style="font-size: x-large;">
+					<div class="row">
+						<i class="fa-solid fa-thumbtack  align-bottom"></i>
+						<p style="font-weight: bold; padding-left: 5px; margin-bottom: 0px">Curitiba - PR</p>
+					</div>
+					<p>Rua Heito Guimarães, 928</p>
+					<div class="row">
+						<i class="fa-solid fa-phone"></i>
+						<p style="padding-left: 5px;">+55 (41) 9 1234-5678</p>
+					</div>
+					<div class="row">
+						<i class="fa-solid fa-envelope"></i>
+						<p style="padding-left: 5px;">contatoPR@agrotop.com.br</p>
+					</div>
+				</div>
+
+				<!--DIREITA-->
+				<div class="container col-sm-4" style="font-size: x-large;">
+					<div class="row">
+						<i class="fa-solid fa-thumbtack  align-bottom"></i>
+						<p style="font-weight: bold; padding-left: 5px; margin-bottom: 0px">Campinas - SP</p>
+					</div>
+					<p>Rua Parcival da Silva, 1250</p>
+					<div class="row">
+						<i class="fa-solid fa-phone"></i>
+						<p style="padding-left: 5px;">+55 (47) 9 1010-1010</p>
+					</div>
+					<div class="row">
+						<i class="fa-solid fa-envelope"></i>
+						<p style="padding-left: 5px;">contatoSP@agrotop.com.br</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+	<!--Footer-->
+	<footer id="footer-bottom" style="background-color: #145D4C;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+					<div class="block">
+						<p style="color: white;">Copyright &copy; 2023 - Todos os direitos reservados </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+</body>
+
+</html>
