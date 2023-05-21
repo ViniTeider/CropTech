@@ -16,13 +16,15 @@ def generate_seeds(db:SQLAlchemy):
     user2 = User(email = "b@b", username = "Hask", password = generate_password_hash("b"))
     user3 = User(email = "c@c", username = "Predo", password = generate_password_hash("c"))
     user4 = User(email = "d@d", username = "Brono", password = generate_password_hash("d"))
+    user5 = User(email = "e@e", username = "Antonio", password = generate_password_hash("e"))
 
     user1.roles = [role1]
     user2.roles = [role2]
     user3.roles = [role1]
     user4.roles = [role2]
+    user5.roles = [role2]
 
-    db.session.add_all([user1,user2,user3,user4])
+    db.session.add_all([user1,user2,user3,user4,user5])
     db.session.commit()
 
     #Pessoa (cliente e funcionario)
