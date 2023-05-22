@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template,redirect,url_for, request
 from models import Sensor, Actuator, Read
+from datetime import datetime
 from flask_login import current_user, login_required
 
 iot = Blueprint("iot", __name__, template_folder = './views/admin/', static_folder='./static/', root_path="./")
@@ -126,13 +127,11 @@ def iot_view_reads():
 
 @iot.route("/save_read", methods = ["POST"])
 def save_read():
-    name = request.form.get("name", None)
-    model = request.form.get("model", None)
-    brand = request.form.get("brand", None)
-    voltage = request.form.get("voltage", None)
-    description = request.form.get("description", None)
-    is_active = True if request.form.get("is_active", None) == "on" else False
+    section_id = request.form.get("section_id", None)
+    sensor_id = request.form.get("sensor_id", None)
+    value = request.form.get("value", None)
+    date_time = datetime.today()
 
-    Read.save_read(name,model,brand,voltage,description,is_active)
+    Read.save_read(section_id,sensor_id,value,date_time)
 
     return redirect(url_for("admin.iot.iot_view_reads"))

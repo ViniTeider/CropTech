@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template,redirect,url_for,request
 from models import Client,Employee
-from datetime import datetime,date
+from datetime import datetime
 from flask_login import current_user, login_required
 
 people = Blueprint("people", __name__, template_folder='./views/admin/', static_folder='./static/', root_path="./")

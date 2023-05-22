@@ -7,6 +7,8 @@ class Section(db.Model):
     name = db.Column(db.String(30))
     plantation_id = db.Column(db.Integer, db.ForeignKey(Plantation.id))
 
+    reads = db.relationship("Read", backref="sections", lazy=True)
+
     def save_section(name,plantation_id):
         section = Section (name = name, plantation_id = plantation_id)
 

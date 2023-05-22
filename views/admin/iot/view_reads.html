@@ -1,0 +1,56 @@
+{% extends "iot/iot_index.html" %}
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"><a href="/admin/">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/iot/">Iot</a></li>
+                        <li class="breadcrumb-item active">Lista de Leituras</li>
+                    </ol>
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="view_reads" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID da Secção</th>
+                                        <th>Nome da Secção</th>
+                                        <th>ID do Sensor</th>
+                                        <th>Medida do Sensor</th>
+                                        <th>Valor</th>
+                                        <th>Data e Hora</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for read in reads %}
+                                    <tr>
+                                        <td>{{ read.section_id }}</td>
+                                        <td>{{ read.name }}</td>
+                                        <td>{{ read.sensor_id }}</td>
+                                        <td>{{ read.measure }}</td>
+                                        <td>{{ read.value }}</td>
+                                        <td>{{ read.date_time }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>ID da Secção</th>
+                                        <th>Nome da Secção</th>
+                                        <th>ID do Sensor</th>
+                                        <th>Medida do Sensor</th>
+                                        <th>Valor</th>
+                                        <th>Data e Hora</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
