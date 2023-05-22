@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="card-body">
                                         <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/iot/update_actuator" method="POST">
-                                            {{ forms.input(label = 'ID', name = 'id', id = 'id', type='text', box_size = 1, value = id ) }}
+                                            <input type="hidden" name="id" id="id" value="{{ id }}">
                                             {{ forms.input(label = 'Nome', name = 'name', id = 'name', type='text', box_size = 6) }}
                                             {{ forms.input(label = 'Modelo', name = 'model', id = 'model', type='text', box_size = 3) }}
                                             {{ forms.input(label = 'Marca', name = 'brand', id = 'brand', type='text', box_size = 3) }}

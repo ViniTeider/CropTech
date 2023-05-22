@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template,redirect,url_for, request
-from models import Sensor, Actuator
+from models import Sensor, Actuator, Read
 from flask_login import current_user, login_required
 
 iot = Blueprint("iot", __name__, template_folder = './views/admin/', static_folder='./static/', root_path="./")
@@ -112,3 +112,27 @@ def delete_actuator(id):
     Actuator.delete_actuator(id)
 
     return redirect(url_for('admin.iot.iot_view_actuators'))
+
+@iot.route("/register_read")
+@login_required
+def iot_register_read():
+    return render_template("/iot/register_read.html", name = current_user.username)
+
+@iot.route("/view_reads")
+@login_required
+def iot_view_reads():
+    reads = Read.get_reads()
+    return render_template("/iot/view_reads.html", reads=reads, name = current_user.username)
+
+@iot.route("/save_read", methods = ["POST"])
+def save_read():
+    name = request.form.get("name", None)
+    model = request.form.get("model", None)
+    brand = request.form.get("brand", None)
+    voltage = request.form.get("voltage", None)
+    description = request.form.get("description", None)
+    is_active = True if request.form.get("is_active", None) == "on" else False
+
+    Read.save_read(name,model,brand,voltage,description,is_active)
+
+    return redirect(url_for("admin.iot.iot_view_reads"))

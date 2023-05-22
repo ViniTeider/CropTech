@@ -12,11 +12,11 @@ def generate_seeds(db:SQLAlchemy):
     db.session.add_all([role1,role2])
     db.session.commit()
     
-    user1 = User(email = "a@a", username = "Vina", password = generate_password_hash("a"))
-    user2 = User(email = "b@b", username = "Hask", password = generate_password_hash("b"))
-    user3 = User(email = "c@c", username = "Predo", password = generate_password_hash("c"))
-    user4 = User(email = "d@d", username = "Brono", password = generate_password_hash("d"))
-    user5 = User(email = "e@e", username = "Antonio", password = generate_password_hash("e"))
+    user1 = User(email = "a@a", username = "Vina", password = generate_password_hash("a"),role="admin")
+    user2 = User(email = "b@b", username = "Hask", password = generate_password_hash("b"),role="client")
+    user3 = User(email = "c@c", username = "Predo", password = generate_password_hash("c"),role="admin")
+    user4 = User(email = "d@d", username = "Brono", password = generate_password_hash("d"),role="client")
+    user5 = User(email = "e@e", username = "Antonio", password = generate_password_hash("e"),role="client")
 
     user1.roles = [role1]
     user2.roles = [role2]
@@ -48,18 +48,18 @@ def generate_seeds(db:SQLAlchemy):
 
     #Plantas
 
-    plantation1 = Plantation(name = 'plantacao 1', client_id = client1.id)
-    plantation2 = Plantation(name = 'plantacao 2', client_id = client1.id)
-    plantation3 = Plantation(name = 'plantacao 3', client_id = client2.id)
+    plantation1 = Plantation(name = 'Plantacao 1', client_id = client1.id)
+    plantation2 = Plantation(name = 'Plantacao 2', client_id = client1.id)
+    plantation3 = Plantation(name = 'Plantacao 3', client_id = client2.id)
 
     db.session.add_all([plantation1,plantation2,plantation3])
     db.session.commit()
 
-    section1 = Section(name = 'trigo', plantation_id = plantation1.id)
-    section2 = Section(name = 'arroz', plantation_id = plantation1.id)
-    section3 = Section(name = 'arroz', plantation_id = plantation2.id)
-    section4 = Section(name = 'batata', plantation_id = plantation3.id)
-    section5 = Section(name = 'cenoura', plantation_id = plantation3.id)
+    section1 = Section(name = 'Trigo', plantation_id = plantation1.id)
+    section2 = Section(name = 'Arroz', plantation_id = plantation1.id)
+    section3 = Section(name = 'Arroz', plantation_id = plantation2.id)
+    section4 = Section(name = 'Batata', plantation_id = plantation3.id)
+    section5 = Section(name = 'Cenoura', plantation_id = plantation3.id)
 
     db.session.add_all([section1,section2,section3,section4,section5])
     db.session.commit()

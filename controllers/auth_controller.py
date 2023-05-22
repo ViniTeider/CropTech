@@ -48,7 +48,7 @@ def signup_post():
     password = request.form.get("password", None)
     
     try:
-        new_user = User(username=username, email=email, password=generate_password_hash(password, method='sha256'))
+        new_user = User(username=username, email=email, password=generate_password_hash(password, method='sha256'),role='client')
         new_user.roles.append(Role(name='client'))
 
         db.session.add(new_user)

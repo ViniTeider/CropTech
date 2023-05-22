@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="card-body">
                                         <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/plant/update_plantation" method="POST">
-                                            {{ forms.input(label = 'ID', name = 'id', id = 'id', type='text', box_size = 1, value = id ) }}
+                                            <input type="hidden" name="id" id="id" value="{{ id }}">
                                             {{ forms.input(label = 'Nome', name = 'name', id = 'name', type='text', box_size = 6) }}
                                             {{ forms.input(label = 'Id do cliente', name = 'client_id', id = 'client_id', type='text', box_size = 3) }}
                                             {{ forms.button(label = 'Atualizar Plantação', box_size = 12) }}
