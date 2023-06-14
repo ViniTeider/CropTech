@@ -107,6 +107,9 @@ def generate_seeds(db:SQLAlchemy):
     read7 = Read(section_id = 3, sensor_id = 1, value = 15, date_time = datetime.now())
     read8 = Read(section_id = 3, sensor_id = 2, value = 15, date_time = datetime.now())
     read9 = Read(section_id = 3, sensor_id = 4, value = 15, date_time = datetime.now())
+    read10 = Read(section_id = 4, sensor_id = 1, value = 15, date_time = datetime.now())
+    read11 = Read(section_id = 4, sensor_id = 2, value = 15, date_time = datetime.now())
+    read12 = Read(section_id = 4, sensor_id = 4, value = 15, date_time = datetime.now())
     
-    db.session.add_all([read1,read2,read3,read4,read5,read6,read7,read8,read9])
+    db.session.add_all([read1,read2,read3,read4,read5,read6,read7,read8,read9,read10,read11,read12])
     db.session.commit()

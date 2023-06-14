@@ -21,11 +21,6 @@ class Read(db.Model):
 
         db.session.add(read)
         db.session.commit()
-    
-
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#                                            TRABALHAR NESSA QUERY DPS
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
     def get_plants(id):
         plants = Section.query.join(Plantation, Plantation.id == Section.plantation_id).join(Client, Client.id == Plantation.client_id).join(Read, Read.section_id == Section.id) \
