@@ -26,6 +26,10 @@ pip install jinja2
 ```bash
 pip install flask-login
 ```
+- Flask MQTT
+```bash
+pip install flask-MQTT
+```
 - SQLAlchemy
 ```bash
 pip install SQLAlchemy
