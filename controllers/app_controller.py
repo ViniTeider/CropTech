@@ -76,21 +76,21 @@ def create_app() -> Flask:
         if(message.topic in ["/CropTech/infoUmidade"]):
             with app.app_context():
                 umidade = message.payload.decode()
-                reads = Read(section_id = 3, sensor_id = 1, value = umidade, date_time=datetime.now())
+                reads = Read(section_id = 1, sensor_id = 1, value = umidade, date_time=datetime.now())
                 db.session.add(reads)
                 db.session.commit()
 
         if(message.topic in ["/CropTech/infoTemperatura"]):
             with app.app_context():
                 infoTemperatura = message.payload.decode()
-                reads = Read(section_id = 3, sensor_id = 2, value = infoTemperatura, date_time=datetime.now())
+                reads = Read(section_id = 1, sensor_id = 2, value = infoTemperatura, date_time=datetime.now())
                 db.session.add(reads)
                 db.session.commit()
 
         if(message.topic in ["/CropTech/infoLuz"]):
             with app.app_context():
                 infoLuz = message.payload.decode()
-                reads = Read(section_id = 3, sensor_id = 4, value = infoLuz, date_time=datetime.now())
+                reads = Read(section_id = 1, sensor_id = 4, value = infoLuz, date_time=datetime.now())
                 db.session.add(reads)
                 db.session.commit()
 
