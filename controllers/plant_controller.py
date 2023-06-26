@@ -14,15 +14,9 @@ plant = Blueprint("plant", __name__, template_folder='./views/admin/', static_fo
 @plant.route("/client")
 @login_required
 def client_index():
-    sections_per_plantation = Section.get_plants(current_user.id)
-    print(sections_per_plantation)
+    sections_per_plantation = Read.get_plants(current_user.id)
 
-    umidity = Read.get_umidity(current_user.id)
-    print("\n\n\n\n")
-    print(umidity)
-    print("\n\n\n\n")
-
-    return render_template("/client/view_plants.html", sections_per_plantation = sections_per_plantation, name = current_user.username, umidity = umidity)
+    return render_template("/client/view_plants.html", sections_per_plantation = sections_per_plantation, name = current_user.username)
 
 @plant.route("/client/register_plant")
 @login_required
